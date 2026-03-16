@@ -1523,7 +1523,7 @@ async def train_model(
         logger.info(f'编码后特征列：{feature_encoding}')
 
         # 11. 模型评估
-        # # 合并所有指标
+        # 合并所有指标
         metrics = model_evaluator.evaluatemodel(
             model=model,
             x_train=X_train,
@@ -1609,6 +1609,116 @@ async def train_model(
             "code": 500,
             "msg": f"模型训练失败：{str(e)}"
         }
+
+
+
+
+
+# ========== 模型预测接口 ==========
+import os
+import json
+import io
+import pandas as pd
+from datetime import datetime
+from fastapi import APIRouter, File, UploadFile, HTTPException, Path, Form
+from fastapi.responses import StreamingResponse
+import joblib
+from typing import Optional
+import logging
+from schemas.models import PredictRequest  # 你原有的
+
+logger = logging.getLogger("ml_platform_api")
+
+
+
+@app.post("/api/v1/models/{problem_type}/{model_type}/predict")
+async def predict_model(
+        problem_type: str = Path(..., description="问题类型（classification/regression）"),
+        split_id: str = Path(..., description="划分数据集ID"),
+        model_type: str = Path(..., description="模型类型（random_forest/xgboost/lightgbm/svm等）"),
+        model_path: str = Form(..., description="模型文件路径"),
+        meta_info_path: str = Form(..., description="元信息文件路径"),
+        file: UploadFile = File(..., description="预测文件：csv / xlsx / xls")
+):
+    if problem_type not in ["classification", "regression"]:
+        return {
+            "code": 400,
+            "msg": f"不支持的问题类型 {problem_type}，仅支持 classification 和 regression"
+        }
+
+    try:
+        # 1. 读取上传的文件
+        filename = file.filename
+        if filename.endswith(".csv"):
+            input_df = pd.read_csv(file.file)
+        elif filename.endswith((".xlsx", ".xls")):
+            input_df = pd.read_excel(file.file)
+        else:
+            raise HTTPException(status_code=400, detail="仅支持 csv / xlsx / xls 格式")
+
+        # 2. 校验路径
+        if not os.path.exists(model_path):
+            raise HTTPException(status_code=404, detail=f"模型文件不存在：{model_path}")
+        if not os.path.exists(meta_info_path):
+            raise HTTPException(status_code=404, detail=f"元信息文件不存在：{meta_info_path}")
+
+        # 3. 加载模型 & 预处理
+        with open(meta_info_path, "r", encoding="utf-8") as f:
+            meta_info = json.load(f)
+        preprocessor_path = meta_info.get("preprocessor_path")
+        model = joblib.load(model_path)
+        preprocessor = joblib.load(preprocessor_path)
+        input_processed = preprocessor.transform(input_df)
+
+        # 4. 预测
+        start = datetime.now()
+        if hasattr(model, "predict_proba") and problem_type == "classification":
+            y_pred = model.predict(input_processed)
+            y_pred_proba = model.predict_proba(input_processed)
+        else:
+            y_pred = model.predict(input_processed)
+            y_pred_proba = None
+        duration = round((datetime.now() - start).total_seconds(), 4)
+
+
+        # 5. 导出 Excel 返回
+        if hasattr(model, "predict_proba") and problem_type == "classification":
+            output_df = input_df.copy()
+            output_df["predict_result"] = y_pred.tolist()
+            output_df["predict_proba"] = y_pred_proba.tolist()
+
+        else:
+            output_df = input_df.copy()
+            output_df["predict_result"] = y_pred.tolist()
+
+        # 生成唯一标识
+        save_path = os.path.join(SAVE_DIR, split_id)
+        os.makedirs(save_path, exist_ok=True)
+        predict_result_path = os.path.join(PROCESSED_DIR, f"{model_type}_predict_result.csv")
+        output_df.to_csv(predict_result_path, index=False, encoding="utf-8-sig")
+
+        # 6. 结果处理
+        result = {
+            "predict_duration_seconds": duration,
+            "model_type": model_type,
+            "problem_type": problem_type,
+            "predict_result_path": predict_result_path
+        }
+
+        # 15. 返回结果
+        return {
+            "code": 200,
+            "msg": "预测成功",
+            "data": result
+        }
+
+
+
+    except HTTPException as e:
+        return {"code": e.status_code, "msg": e.detail}
+    except Exception as e:
+        logger.error(f"错误：{str(e)}", exc_info=True)
+        return {"code": 500, "msg": f"预测失败：{str(e)}"}
 
 # ===================== 主函数 =====================
 if __name__ == "__main__":

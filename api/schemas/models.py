@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, List
 
 # ===================== 模型训练接口 =====================
 # 训练参数请求模型
@@ -20,4 +20,14 @@ class TrainResponse(BaseModel):
     metrics: Dict[str, Any] = Field(description="评估指标")
     label_mapping: Optional[Dict[str, Any]] = Field({}, description="标签映射关系")
     model_save_path: str = Field(description="模型保存路径")
+    meta_info_path: str = Field(description="元数据信息保存路径")
     message: str = Field(description="操作结果提示")
+
+class PredictRequest(BaseModel):
+    """
+    模型预测请求参数
+    """
+    model_path: str = Field(..., description="训练好的模型文件路径")
+    # preprocessor_path: str = Field(..., description="预处理器文件路径")
+    input_data: List[Dict[str, Any]] = Field(..., description="输入数据列表，每条数据为字典格式")
+    meta_info_path: Optional[str] = Field(None, description="元信息文件路径，用加载预处理器和标签映射字典")

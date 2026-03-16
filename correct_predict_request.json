@@ -1,0 +1,12 @@
+{
+  "model_path":"./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl",
+  "input_data": [
+    {
+      "sepal_length":5.8,
+      "sepal_width": 2.5,
+      "petal_length": 4.4,
+      "petal_width": 1.2
+    }
+  ],
+  "meta_info_path": "./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/meta_info.json"
+}

@@ -1,0 +1,189 @@
+2026-03-16 08:43:09 - ml_platform_api - INFO - 数据集上传成功：ID=eb419666-0ff8-45b4-bd05-6419e62f6a42，文件名=iris.csv（存储为d3cdd166-3297-466a-8a5d-6b2a72f2a640.csv）
+2026-03-16 08:43:22 - ml_platform_api - WARNING - 列species无异常值范围信息，跳过处理
+2026-03-16 08:43:22 - ml_platform_api - INFO - 处理后数据已保存：./uploads\processed\eb419666-0ff8-45b4-bd05-6419e62f6a42_processed_20260316_084322.csv
+2026-03-16 08:43:22 - ml_platform_api - INFO - 数据集eb419666-0ff8-45b4-bd05-6419e62f6a42统一处理完成：处理列=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']，空值方法=mean_cols，异常值方法=save_outlier
+2026-03-16 08:43:29 - ml_platform_api - INFO - 通过processed_ID eb419666-0ff8-45b4-bd05-6419e62f6a42_processed_20260316_084322 匹配到文件：./uploads\processed\eb419666-0ff8-45b4-bd05-6419e62f6a42_processed_20260316_084322.csv
+2026-03-16 08:43:29 - ml_platform_api - INFO - 独热编码列为空，已跳过
+2026-03-16 08:43:29 - ml_platform_api - INFO - 序列编码列为空，已跳过
+2026-03-16 08:43:29 - ml_platform_api - INFO - 数值特征列：['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
+2026-03-16 08:43:29 - ml_platform_api - INFO - 未编码文本特征列：[]
+2026-03-16 08:43:29 - ml_platform_api - INFO - 独热编码列：[]
+2026-03-16 08:43:29 - ml_platform_api - INFO - 序列编码列：[]
+2026-03-16 08:43:29 - ml_platform_api - INFO - 数值列标准化开关：is_standard = True
+2026-03-16 08:43:29 - ml_platform_api - INFO - 特征列编码映射关系：{'sepal_length': '数值列（无编码，标准化）', 'sepal_width': '数值列（无编码，标准化）', 'petal_length': '数值列（无编码，标准化）', 'petal_width': '数值列（无编码，标准化）'}
+2026-03-16 08:43:29 - ml_platform_api - INFO - 编码后的特征列：['numeric__sepal_length', 'numeric__sepal_width', 'numeric__petal_length', 'numeric__petal_width']
+2026-03-16 08:43:29 - ml_platform_api - INFO - 编码后的特征矩阵形状：(150, 4)
+2026-03-16 08:43:29 - ml_platform_api - INFO - 标签列名：species
+2026-03-16 08:43:29 - ml_platform_api - INFO - 标签列原始类型：object
+2026-03-16 08:43:29 - ml_platform_api - INFO - 标签列前5个值：['setosa', 'setosa', 'setosa', 'setosa', 'setosa']
+2026-03-16 08:43:29 - ml_platform_api - INFO - 标签映射关系：{'setosa': 0, 'versicolor': 1, 'virginica': 2}
+2026-03-16 08:43:29 - ml_platform_api - INFO - 标签编码完成，共 3 个类别
+2026-03-16 08:43:29 - ml_platform_api - INFO - 数据集类别数：3，类别列表：['setosa', 'versicolor', 'virginica']
+2026-03-16 08:43:29 - ml_platform_api - INFO - 编码后训练集特征维度：(89, 4)
+2026-03-16 08:43:29 - ml_platform_api - INFO - 编码后验证集特征维度：(30, 4)
+2026-03-16 08:43:29 - ml_platform_api - INFO - 编码后测试集特征维度：(30, 4)
+2026-03-16 08:43:29 - ml_platform_api - INFO - 数据集处理完成 | 原始ID：eb419666-0ff8-45b4-bd05-6419e62f6a42 | 标签列：species | 总样本：150 | 训练集：89(59.7%) | 验证集：30(20.1%) | 测试集：30(20.1%) | 预处理数据保存路径：./uploads\split_datasets\eb419666-0ff8-45b4-bd05-6419e62f6a42_split_20260316_084329
+2026-03-16 08:43:37 - ml_platform_api - INFO - 元信息已保存至：./uploads\split_datasets\eb419666-0ff8-45b4-bd05-6419e62f6a42_split_20260316_084329\meta_info.json
+2026-03-16 08:43:37 - ml_platform_api - INFO - 开始加载预处理数据：./uploads\split_datasets\eb419666-0ff8-45b4-bd05-6419e62f6a42_split_20260316_084329\processed_data.npz
+2026-03-16 08:43:37 - ml_platform_api - INFO - 数据加载成功 | 训练集：(89, 4) | 验证集：(30, 4) | 测试集：(30, 4)
+2026-03-16 08:43:37 - ml_platform_api - INFO - 使用模型参数：{'n_estimators': 100, 'max_depth': 3, 'min_samples_split': 2, 'random_state': 42}
+2026-03-16 08:43:37 - ml_platform_api - INFO - 开始训练random_forest模型 | 数据集ID：eb419666-0ff8-45b4-bd05-6419e62f6a42 | 划分ID：eb419666-0ff8-45b4-bd05-6419e62f6a42_split_20260316_084329
+2026-03-16 08:43:37 - ml_platform_api - INFO - 编码后特征列：['numeric__sepal_length', 'numeric__sepal_width', 'numeric__petal_length', 'numeric__petal_width']
+2026-03-16 08:43:37 - ml_platform_api - INFO - random_forest模型在测试集上的得分：0.9333333333333333
+2026-03-16 08:43:43 - ml_platform_api - INFO - 特征重要性排序：
+                   特征    重要性
+numeric__petal_length 0.4816
+ numeric__petal_width 0.3797
+numeric__sepal_length 0.1251
+ numeric__sepal_width 0.0135
+2026-03-16 08:43:43 - ml_platform_api - INFO - 模型评估指标：
+{
+      "train": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "confusion": [
+      [   30,    0,    0 ],
+      [    0,   30,    0 ],
+      [    0,    0,   29 ]
+    ]
+},
+      "val": {
+      "accuracy": 0.9,
+      "precision": 0.9024,
+      "recall": 0.9,
+      "f1": 0.8997,
+      "confusion": [
+      [   10,    0,    0 ],
+      [    0,    9,    1 ],
+      [    0,    2,    8 ]
+    ]
+},
+      "test": {
+      "accuracy": 0.9333,
+      "precision": 0.9333,
+      "recall": 0.9333,
+      "f1": 0.9333,
+      "confusion": [
+      [   10,    0,    0 ],
+      [    0,    9,    1 ],
+      [    0,    1,    9 ]
+    ]
+}
+}
+2026-03-16 08:43:43 - ml_platform_api - INFO - 模型已保存至：./uploads\split_datasets\eb419666-0ff8-45b4-bd05-6419e62f6a42_split_20260316_084329\random_forest_model_20260316_084343.pkl
+2026-03-16 08:45:20 - ml_platform_api - INFO - 批量分类预测
+2026-03-16 08:45:20 - ml_platform_api - INFO - 标签映射：{'setosa': 0, 'versicolor': 1, 'virginica': 2}
+2026-03-16 08:45:20 - ml_platform_api - INFO - 预测结果映射已写入
+2026-03-16 08:45:20 - ml_platform_api - INFO - 批量预测保存至./uploads\split_datasets\eb419666-0ff8-45b4-bd05-6419e62f6a42_split_20260316_084329\random_forest_predict_result.csv
+2026-03-16 08:45:20 - ml_platform_api - INFO - 预测完成，共处理 100 条数据，耗时 0.0060 秒
+2026-03-16 08:48:52 - ml_platform_api - ERROR - 预测失败：模型文件不存在：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-16 08:51:07 - ml_platform_api - ERROR - 预测失败：模型文件不存在：./uploads\split_datasets\eb419666-0ff8-45b4-bd05-6419e62f6a42_split_20260316_084329\random_forest_mod0316_084343.pkl
+2026-03-16 08:51:09 - ml_platform_api - ERROR - 预测失败：模型文件不存在：./uploads\split_datasets\eb419666-0ff8-45b4-bd05-6419e62f6a42_split_20260316_084329\random_forest_mod0316_084343.pkl
+2026-03-16 08:51:37 - ml_platform_api - ERROR - 预测失败：模型文件不存在："D:\wh\AAAproject\MachineLearning\api\uploads\split_datasets\eb419666-0ff8-45b4-bd05-6419e62f6a42_split_20260316_084329\random_forest_model_20260316_084343.pkl"
+2026-03-16 08:51:56 - ml_platform_api - INFO - 开始加载模型：D:\wh\AAAproject\MachineLearning\api\uploads\split_datasets\eb419666-0ff8-45b4-bd05-6419e62f6a42_split_20260316_084329\random_forest_model_20260316_084343.pkl
+2026-03-16 08:51:56 - ml_platform_api - INFO - 开始加载预处理器：./uploads\split_datasets\eb419666-0ff8-45b4-bd05-6419e62f6a42_split_20260316_084329\preprocessor.pkl
+2026-03-16 08:51:56 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-16 08:51:56 - ml_platform_api - INFO - 开始执行预测
+2026-03-16 08:51:56 - ml_platform_api - INFO - 标签映射：{'setosa': 0, 'versicolor': 1, 'virginica': 2}
+2026-03-16 08:51:56 - ml_platform_api - INFO - 预测结果: ['versicolor']
+2026-03-16 08:51:56 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0131 秒
+2026-03-16 09:00:38 - ml_platform_api - INFO - 数据集上传成功：ID=143e85ff-a1d9-48b8-b6ca-8467e70f5d77，文件名=iris.csv（存储为047461cf-5e40-4b49-b914-88cd5ca44d2f.csv）
+2026-03-16 09:00:44 - ml_platform_api - WARNING - 列species无异常值范围信息，跳过处理
+2026-03-16 09:00:44 - ml_platform_api - INFO - 处理后数据已保存：./uploads\processed\143e85ff-a1d9-48b8-b6ca-8467e70f5d77_processed_20260316_090044.csv
+2026-03-16 09:00:44 - ml_platform_api - INFO - 数据集143e85ff-a1d9-48b8-b6ca-8467e70f5d77统一处理完成：处理列=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']，空值方法=mean_cols，异常值方法=save_outlier
+2026-03-16 09:00:51 - ml_platform_api - INFO - 通过processed_ID 143e85ff-a1d9-48b8-b6ca-8467e70f5d77_processed_20260316_090044 匹配到文件：./uploads\processed\143e85ff-a1d9-48b8-b6ca-8467e70f5d77_processed_20260316_090044.csv
+2026-03-16 09:00:51 - ml_platform_api - INFO - 独热编码列为空，已跳过
+2026-03-16 09:00:51 - ml_platform_api - INFO - 序列编码列为空，已跳过
+2026-03-16 09:00:51 - ml_platform_api - INFO - 数值特征列：['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
+2026-03-16 09:00:51 - ml_platform_api - INFO - 未编码文本特征列：[]
+2026-03-16 09:00:51 - ml_platform_api - INFO - 独热编码列：[]
+2026-03-16 09:00:51 - ml_platform_api - INFO - 序列编码列：[]
+2026-03-16 09:00:51 - ml_platform_api - INFO - 数值列标准化开关：is_standard = True
+2026-03-16 09:00:51 - ml_platform_api - INFO - 特征列编码映射关系：{'sepal_length': '数值列（无编码，标准化）', 'sepal_width': '数值列（无编码，标准化）', 'petal_length': '数值列（无编码，标准化）', 'petal_width': '数值列（无编码，标准化）'}
+2026-03-16 09:00:51 - ml_platform_api - INFO - 编码后的特征列：['numeric__sepal_length', 'numeric__sepal_width', 'numeric__petal_length', 'numeric__petal_width']
+2026-03-16 09:00:51 - ml_platform_api - INFO - 编码后的特征矩阵形状：(150, 4)
+2026-03-16 09:00:51 - ml_platform_api - INFO - 标签列名：species
+2026-03-16 09:00:51 - ml_platform_api - INFO - 标签列原始类型：object
+2026-03-16 09:00:51 - ml_platform_api - INFO - 标签列前5个值：['setosa', 'setosa', 'setosa', 'setosa', 'setosa']
+2026-03-16 09:00:51 - ml_platform_api - INFO - 标签映射关系：{'setosa': 0, 'versicolor': 1, 'virginica': 2}
+2026-03-16 09:00:51 - ml_platform_api - INFO - 标签编码完成，共 3 个类别
+2026-03-16 09:00:51 - ml_platform_api - INFO - 数据集类别数：3，类别列表：['setosa', 'versicolor', 'virginica']
+2026-03-16 09:00:51 - ml_platform_api - INFO - 编码后训练集特征维度：(89, 4)
+2026-03-16 09:00:51 - ml_platform_api - INFO - 编码后验证集特征维度：(30, 4)
+2026-03-16 09:00:51 - ml_platform_api - INFO - 编码后测试集特征维度：(30, 4)
+2026-03-16 09:00:51 - ml_platform_api - INFO - 数据集处理完成 | 原始ID：143e85ff-a1d9-48b8-b6ca-8467e70f5d77 | 标签列：species | 总样本：150 | 训练集：89(59.7%) | 验证集：30(20.1%) | 测试集：30(20.1%) | 预处理数据保存路径：./uploads\split_datasets\143e85ff-a1d9-48b8-b6ca-8467e70f5d77_split_20260316_090051
+2026-03-16 09:00:54 - ml_platform_api - INFO - 元信息已保存至：./uploads\split_datasets\143e85ff-a1d9-48b8-b6ca-8467e70f5d77_split_20260316_090051\meta_info.json
+2026-03-16 09:00:54 - ml_platform_api - INFO - 开始加载预处理数据：./uploads\split_datasets\143e85ff-a1d9-48b8-b6ca-8467e70f5d77_split_20260316_090051\processed_data.npz
+2026-03-16 09:00:54 - ml_platform_api - INFO - 数据加载成功 | 训练集：(89, 4) | 验证集：(30, 4) | 测试集：(30, 4)
+2026-03-16 09:00:54 - ml_platform_api - INFO - 使用模型参数：{'n_estimators': 100, 'max_depth': 3, 'min_samples_split': 2, 'random_state': 42}
+2026-03-16 09:00:54 - ml_platform_api - INFO - 开始训练random_forest模型 | 数据集ID：143e85ff-a1d9-48b8-b6ca-8467e70f5d77 | 划分ID：143e85ff-a1d9-48b8-b6ca-8467e70f5d77_split_20260316_090051
+2026-03-16 09:00:55 - ml_platform_api - INFO - 编码后特征列：['numeric__sepal_length', 'numeric__sepal_width', 'numeric__petal_length', 'numeric__petal_width']
+2026-03-16 09:00:55 - ml_platform_api - INFO - random_forest模型在测试集上的得分：0.9333333333333333
+2026-03-16 09:00:55 - ml_platform_api - INFO - 特征重要性排序：
+                   特征    重要性
+numeric__petal_length 0.4816
+ numeric__petal_width 0.3797
+numeric__sepal_length 0.1251
+ numeric__sepal_width 0.0135
+2026-03-16 09:00:55 - ml_platform_api - INFO - 模型评估指标：
+{
+      "train": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "confusion": [
+      [   30,    0,    0 ],
+      [    0,   30,    0 ],
+      [    0,    0,   29 ]
+    ]
+},
+      "val": {
+      "accuracy": 0.9,
+      "precision": 0.9024,
+      "recall": 0.9,
+      "f1": 0.8997,
+      "confusion": [
+      [   10,    0,    0 ],
+      [    0,    9,    1 ],
+      [    0,    2,    8 ]
+    ]
+},
+      "test": {
+      "accuracy": 0.9333,
+      "precision": 0.9333,
+      "recall": 0.9333,
+      "f1": 0.9333,
+      "confusion": [
+      [   10,    0,    0 ],
+      [    0,    9,    1 ],
+      [    0,    1,    9 ]
+    ]
+}
+}
+2026-03-16 09:00:55 - ml_platform_api - INFO - 模型已保存至：./uploads\split_datasets\143e85ff-a1d9-48b8-b6ca-8467e70f5d77_split_20260316_090051\random_forest_model_20260316_090055.pkl
+2026-03-16 09:01:45 - ml_platform_api - INFO - 批量分类预测
+2026-03-16 09:01:45 - ml_platform_api - INFO - 标签映射：{'setosa': 0, 'versicolor': 1, 'virginica': 2}
+2026-03-16 09:01:45 - ml_platform_api - INFO - 预测结果映射已写入
+2026-03-16 09:01:45 - ml_platform_api - INFO - 批量预测保存至./uploads\split_datasets\143e85ff-a1d9-48b8-b6ca-8467e70f5d77_split_20260316_09005\random_forest_predict_result.csv
+2026-03-16 09:01:45 - ml_platform_api - INFO - 预测完成，共处理 100 条数据，耗时 0.0059 秒
+2026-03-16 09:57:37 - ml_platform_api - INFO - 数据集上传成功：ID=c36c5dfb-2e8b-4dbb-a9ae-2ec0bd024b68，文件名=train_public.csv（存储为684c0ffa-2285-4e83-8c5c-d40231f9c7eb.csv）
+2026-03-16 09:57:58 - ml_platform_api - WARNING - 列class无异常值范围信息，跳过处理
+2026-03-16 09:57:58 - ml_platform_api - WARNING - 列employer_type无异常值范围信息，跳过处理
+2026-03-16 09:57:58 - ml_platform_api - WARNING - 列industry无异常值范围信息，跳过处理
+2026-03-16 09:57:58 - ml_platform_api - WARNING - 列work_year无异常值范围信息，跳过处理
+2026-03-16 09:57:58 - ml_platform_api - WARNING - 列issue_date无异常值范围信息，跳过处理
+2026-03-16 09:57:58 - ml_platform_api - WARNING - 列earlies_credit_mon无异常值范围信息，跳过处理
+2026-03-16 09:57:58 - ml_platform_api - INFO - 处理后数据已保存：./uploads\processed\c36c5dfb-2e8b-4dbb-a9ae-2ec0bd024b68_processed_20260316_095758.csv
+2026-03-16 09:57:58 - ml_platform_api - INFO - 数据集c36c5dfb-2e8b-4dbb-a9ae-2ec0bd024b68统一处理完成：处理列=['loan_id', 'user_id', 'total_loan', 'year_of_loan', 'interest', 'monthly_payment', 'class', 'employer_type', 'industry', 'work_year', 'house_exist', 'censor_status', 'issue_date', 'use', 'post_code', 'region', 'debt_loan_ratio', 'del_in_18month', 'scoring_low', 'scoring_high', 'known_outstanding_loan', 'known_dero', 'pub_dero_bankrup', 'recircle_b', 'recircle_u', 'initial_list_status', 'app_type', 'earlies_credit_mon', 'title', 'policy_code', 'f0', 'f1', 'f2', 'f3', 'f4', 'early_return', 'early_return_amount', 'early_return_amount_3mon', 'isDefault']，空值方法=missing_all_cols，异常值方法=save_outlier
+2026-03-16 09:57:59 - ml_platform_api - WARNING - 列class无异常值范围信息，跳过处理
+2026-03-16 09:57:59 - ml_platform_api - WARNING - 列employer_type无异常值范围信息，跳过处理
+2026-03-16 09:57:59 - ml_platform_api - WARNING - 列industry无异常值范围信息，跳过处理
+2026-03-16 09:57:59 - ml_platform_api - WARNING - 列work_year无异常值范围信息，跳过处理
+2026-03-16 09:57:59 - ml_platform_api - WARNING - 列issue_date无异常值范围信息，跳过处理
+2026-03-16 09:57:59 - ml_platform_api - WARNING - 列earlies_credit_mon无异常值范围信息，跳过处理
+2026-03-16 09:58:02 - ml_platform_api - INFO - 处理后数据已保存：./uploads\processed\c36c5dfb-2e8b-4dbb-a9ae-2ec0bd024b68_processed_20260316_095802.csv
+2026-03-16 09:58:02 - ml_platform_api - INFO - 数据集c36c5dfb-2e8b-4dbb-a9ae-2ec0bd024b68统一处理完成：处理列=['loan_id', 'user_id', 'total_loan', 'year_of_loan', 'interest', 'monthly_payment', 'class', 'employer_type', 'industry', 'work_year', 'house_exist', 'censor_status', 'issue_date', 'use', 'post_code', 'region', 'debt_loan_ratio', 'del_in_18month', 'scoring_low', 'scoring_high', 'known_outstanding_loan', 'known_dero', 'pub_dero_bankrup', 'recircle_b', 'recircle_u', 'initial_list_status', 'app_type', 'earlies_credit_mon', 'title', 'policy_code', 'f0', 'f1', 'f2', 'f3', 'f4', 'early_return', 'early_return_amount', 'early_return_amount_3mon', 'isDefault']，空值方法=missing_all_cols，异常值方法=save_outlier
+2026-03-16 15:18:21 - ml_platform_api - INFO - 数据集上传成功：ID=1f4a8a7f-3b71-4d0c-81c2-584b0ac6a8f4，文件名=train_public.csv（存储为693ebe3c-4cc8-4fc9-aaf5-67e005a10e79.csv）

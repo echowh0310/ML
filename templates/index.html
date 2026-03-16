@@ -187,6 +187,10 @@
                     <div class="step-number">5</div>
                     <div>模型训练与评估</div>
                 </div>
+                <div class="col step-item" id="step6-nav">
+                    <div class="step-number">6</div>
+                    <div>模型预测</div>
+                </div>
             </div>
         </div>
 
@@ -614,6 +618,217 @@
             <div id="trainResults" class="result-section" style="display:none;">
                 <h5>训练结果</h5>
                 <div id="trainSummary"></div>
+                <div class="mt-3">
+                    <button class="btn btn-primary" onclick="nextStep(5)">进入模型预测</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 6: Model Prediction -->
+        <div class="step-content" id="step6" style="display:none;">
+            <h2>6. 模型预测</h2>
+            
+            <!-- 预测类型选择 -->
+            <div class="mb-4">
+                <h6>选择预测方式</h6>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="predict_type" id="predict_type_json" value="json" checked>
+                    <label class="form-check-label" for="predict_type_json">JSON数据预测</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="predict_type" id="predict_type_file" value="file">
+                    <label class="form-check-label" for="predict_type_file">文件上传预测</label>
+                </div>
+            </div>
+
+            <!-- JSON数据预测表单 -->
+            <div id="jsonPredictFormContainer">
+                <form id="jsonPredictForm">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">JSON数据预测</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label" for="json_problem_type">问题类型</label>
+                                        <select class="form-select" id="json_problem_type" name="problem_type" required>
+                                            <option value="classification">分类</option>
+                                            <option value="regression">回归</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label" for="json_model_type">模型类型</label>
+                                        <select class="form-select" id="json_model_type" name="model_type" required>
+                                            <!-- 分类模型选项 -->
+                                            <optgroup label="分类模型">
+                                                <option value="random_forest">随机森林</option>
+                                                <option value="logistic_regression">逻辑回归</option>
+                                                <option value="knn">K近邻分类</option>
+                                                <option value="decision_tree">决策树分类</option>
+                                                <option value="Ga_naive_bayes">高斯贝叶斯</option>
+                                                <option value="Be_naive_bayes">伯努利贝叶斯</option>
+                                                <option value="svm">支持向量机分类</option>
+                                                <option value="gboost">梯度提升分类</option>
+                                                <option value="xgboost">XGBoost分类</option>
+                                                <option value="lightgbm">LightGBM分类</option>
+                                                <option value="adaboost">AdaBoost分类</option>
+                                                <option value="mlp">多层感知机分类</option>
+                                            </optgroup>
+                                            <!-- 回归模型选项 -->
+                                            <optgroup label="回归模型">
+                                                <option value="random_forest">随机森林</option>
+                                                <option value="LR">线性回归</option>
+                                                <option value="knn">K近邻回归</option>
+                                                <option value="decision_tree">决策树回归</option>
+                                                <option value="svm">支持向量机回归</option>
+                                                <option value="lasso">Lasso回归</option>
+                                                <option value="gboost">梯度提升回归</option>
+                                                <option value="xgboost">XGBoost回归</option>
+                                                <option value="lightgbm">LightGBM回归</option>
+                                                <option value="adaboost">AdaBoost回归</option>
+                                                <option value="mlp">多层感知机回归</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="json_model_path">模型文件路径</label>
+                                        <input type="text" class="form-control" id="json_model_path" name="model_path" placeholder="例如: d:/models/random_forest.pkl" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="json_meta_info_path">元信息文件路径</label>
+                                        <input type="text" class="form-control" id="json_meta_info_path" name="meta_info_path" placeholder="例如: d:/models/meta_info.json" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="json_input_data">输入数据 (JSON格式)</label>
+                                        <textarea class="form-control json-input" id="json_input_data" name="input_data" rows="6" placeholder='[{"feature1": 1.0, "feature2": 2.0}, {"feature1": 3.0, "feature2": 4.0}]' required></textarea>
+                                        <div class="form-text">输入要预测的数据，每行一个JSON对象</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-secondary" onclick="previousStep(6)">上一步</button>
+                            <button type="submit" class="btn btn-primary float-end">执行JSON预测</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- 文件上传预测表单 -->
+            <div id="filePredictFormContainer" style="display:none;">
+                <form id="filePredictForm" enctype="multipart/form-data">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">文件上传预测</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label" for="file_problem_type">问题类型</label>
+                                        <select class="form-select" id="file_problem_type" name="problem_type" required>
+                                            <option value="classification">分类</option>
+                                            <option value="regression">回归</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label" for="file_model_type">模型类型</label>
+                                        <select class="form-select" id="file_model_type" name="model_type" required>
+                                            <!-- 分类模型选项 -->
+                                            <optgroup label="分类模型">
+                                                <option value="random_forest">随机森林</option>
+                                                <option value="logistic_regression">逻辑回归</option>
+                                                <option value="knn">K近邻分类</option>
+                                                <option value="decision_tree">决策树分类</option>
+                                                <option value="Ga_naive_bayes">高斯贝叶斯</option>
+                                                <option value="Be_naive_bayes">伯努利贝叶斯</option>
+                                                <option value="svm">支持向量机分类</option>
+                                                <option value="gboost">梯度提升分类</option>
+                                                <option value="xgboost">XGBoost分类</option>
+                                                <option value="lightgbm">LightGBM分类</option>
+                                                <option value="adaboost">AdaBoost分类</option>
+                                                <option value="mlp">多层感知机分类</option>
+                                            </optgroup>
+                                            <!-- 回归模型选项 -->
+                                            <optgroup label="回归模型">
+                                                <option value="random_forest">随机森林</option>
+                                                <option value="LR">线性回归</option>
+                                                <option value="knn">K近邻回归</option>
+                                                <option value="decision_tree">决策树回归</option>
+                                                <option value="svm">支持向量机回归</option>
+                                                <option value="lasso">Lasso回归</option>
+                                                <option value="gboost">梯度提升回归</option>
+                                                <option value="xgboost">XGBoost回归</option>
+                                                <option value="lightgbm">LightGBM回归</option>
+                                                <option value="adaboost">AdaBoost回归</option>
+                                                <option value="mlp">多层感知机回归</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="file_split_id">划分ID</label>
+                                        <input type="text" class="form-control" id="file_split_id" name="split_id" placeholder="例如: split_123" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="file_model_path">模型文件路径</label>
+                                        <input type="text" class="form-control" id="file_model_path" name="model_path" placeholder="例如: d:/models/random_forest.pkl" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="file_meta_info_path">元信息文件路径</label>
+                                        <input type="text" class="form-control" id="file_meta_info_path" name="meta_info_path" placeholder="例如: d:/models/meta_info.json" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="predict_file">预测文件</label>
+                                        <input type="file" class="form-control" id="predict_file" name="file" accept=".csv,.xlsx,.xls" required>
+                                        <div class="form-text">支持 CSV、XLSX、XLS 格式</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-secondary" onclick="previousStep(6)">上一步</button>
+                            <button type="submit" class="btn btn-primary float-end">执行文件预测</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- 预测结果展示 -->
+            <div id="predictResults" class="result-section" style="display:none;">
+                <h5>预测结果</h5>
+                <div id="predictSummary"></div>
             </div>
         </div>
 
@@ -628,6 +843,7 @@
         let columnsInfo = null;
         let splitId = null;
         let trainResult = null;
+        let predictResult = null;
 
         // Step 1: Upload Dataset
         document.getElementById('uploadForm').addEventListener('submit', async function(e) {
@@ -1046,6 +1262,16 @@
                 if (splitId) {
                     document.getElementById('train_split_id').value = splitId;
                 }
+            } else if (currentStep === 5) {
+                // Step 5 -> Step 6
+                document.getElementById('step5').style.display = 'none';
+                document.getElementById('step6').style.display = 'block';
+                navItems[0].classList.add('completed');
+                navItems[1].classList.add('completed');
+                navItems[2].classList.add('completed');
+                navItems[3].classList.add('completed');
+                navItems[4].classList.add('completed');
+                navItems[5].classList.add('active');
             }
         }
 
@@ -1080,6 +1306,15 @@
                 navItems[1].classList.add('completed');
                 navItems[2].classList.add('completed');
                 navItems[3].classList.add('active');
+            } else if (currentStep === 6) {
+                // Step 6 -> Step 5
+                document.getElementById('step6').style.display = 'none';
+                document.getElementById('step5').style.display = 'block';
+                navItems[0].classList.add('completed');
+                navItems[1].classList.add('completed');
+                navItems[2].classList.add('completed');
+                navItems[3].classList.add('completed');
+                navItems[4].classList.add('active');
             }
         }
 
@@ -1318,6 +1553,177 @@
                 }
             });
         });
+
+        // Step 6: Model Prediction
+        // 预测类型切换
+        const predictTypeRadios = document.querySelectorAll('input[name="predict_type"]');
+        const jsonPredictFormContainer = document.getElementById('jsonPredictFormContainer');
+        const filePredictFormContainer = document.getElementById('filePredictFormContainer');
+
+        predictTypeRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'json') {
+                    jsonPredictFormContainer.style.display = 'block';
+                    filePredictFormContainer.style.display = 'none';
+                } else {
+                    jsonPredictFormContainer.style.display = 'none';
+                    filePredictFormContainer.style.display = 'block';
+                }
+            });
+        });
+
+        // JSON数据预测表单提交
+        document.getElementById('jsonPredictForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            try {
+                const problem_type = document.getElementById('json_problem_type').value;
+                const model_type = document.getElementById('json_model_type').value;
+                const model_path = document.getElementById('json_model_path').value;
+                const meta_info_path = document.getElementById('json_meta_info_path').value;
+                const input_data = document.getElementById('json_input_data').value;
+
+                // 验证JSON格式
+                let parsedInputData;
+                try {
+                    parsedInputData = JSON.parse(input_data);
+                    if (!Array.isArray(parsedInputData)) {
+                        throw new Error('输入数据必须是JSON数组');
+                    }
+                } catch (jsonError) {
+                    showMessage('输入数据不是有效的JSON格式：' + jsonError.message, 'danger');
+                    return;
+                }
+
+                const predictRequest = {
+                    model_path: model_path,
+                    input_data: parsedInputData,
+                    meta_info_path: meta_info_path
+                };
+
+                const response = await axios.post(
+                    `http://localhost:8005/api/v1/models/${problem_type}/${model_type}/predict`,
+                    predictRequest
+                );
+
+                if (response.data && response.data.code === 200) {
+                    const predictResult = response.data.data;
+                    displayPredictResults(predictResult);
+                    showMessage('JSON数据预测成功！', 'success');
+                } else {
+                    showMessage('预测失败：' + (response.data?.msg || '未知错误'), 'danger');
+                }
+            } catch (error) {
+                showMessage('预测失败：' + (error.response?.data?.msg || error.message), 'danger');
+            }
+        });
+
+        // 文件上传预测表单提交
+        document.getElementById('filePredictForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            try {
+                const formData = new FormData();
+                formData.append('split_id', document.getElementById('file_split_id').value);
+                formData.append('model_path', document.getElementById('file_model_path').value);
+                formData.append('meta_info_path', document.getElementById('file_meta_info_path').value);
+                formData.append('file', document.getElementById('predict_file').files[0]);
+
+                const problem_type = document.getElementById('file_problem_type').value;
+                const model_type = document.getElementById('file_model_type').value;
+
+                const response = await axios.post(
+                    `http://localhost:8005/api/v1/models/${problem_type}/${model_type}/file_predict`,
+                    formData,
+                    {
+                        headers: {
+                            'Content-Type': 'multipart/form-data'
+                        }
+                    }
+                );
+
+                if (response.data && response.data.code === 200) {
+                    const predictResult = response.data.data;
+                    displayPredictResults(predictResult);
+                    showMessage('文件上传预测成功！', 'success');
+                } else {
+                    showMessage('预测失败：' + (response.data?.msg || '未知错误'), 'danger');
+                }
+            } catch (error) {
+                showMessage('预测失败：' + (error.response?.data?.msg || error.message), 'danger');
+            }
+        });
+
+        // 显示预测结果
+        function displayPredictResults(results) {
+            const predictSummary = document.getElementById('predictSummary');
+            const predictResults = document.getElementById('predictResults');
+
+            if (!results) {
+                predictSummary.innerHTML = '<p class="text-danger">预测结果为空，请检查预测配置和API响应</p>';
+                predictResults.style.display = 'block';
+                return;
+            }
+
+            let summaryHtml = '<div class="row">';
+
+            // 基本信息
+            summaryHtml += `
+                <div class="col-md-6">
+                    <h6>预测基本信息</h6>
+                    <p>模型类型: ${results.model_type || 'N/A'}</p>
+                    <p>问题类型: ${results.problem_type || 'N/A'}</p>
+                    <p>预测耗时: ${results.predict_duration_seconds || 0} 秒</p>
+                </div>
+            `;
+
+            // 预测结果详情
+            summaryHtml += '<div class="col-md-6">';
+            summaryHtml += '<h6>预测结果详情</h6>';
+
+            if (results.predictions) {
+                summaryHtml += `<p>预测数量: ${results.predictions.length}</p>`;
+                summaryHtml += '<p>预测值: ' + JSON.stringify(results.predictions).substring(0, 200) + (results.predictions.length > 10 ? '...' : '') + '</p>';
+            }
+
+            if (results.predictions_original) {
+                summaryHtml += '<p>原始标签预测值: ' + JSON.stringify(results.predictions_original).substring(0, 200) + (results.predictions_original.length > 10 ? '...' : '') + '</p>';
+            }
+
+            if (results.predict_result_path) {
+                summaryHtml += `<p>预测结果文件路径: ${results.predict_result_path}</p>`;
+            }
+
+            summaryHtml += '</div>';
+            summaryHtml += '</div>';
+
+            // 标签映射
+            if (results.label_mapping) {
+                summaryHtml += `
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <h6>标签映射</h6>
+                            <pre>${JSON.stringify(results.label_mapping, null, 2)}</pre>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // 概率信息（如果有）
+            if (results.probabilities) {
+                summaryHtml += `
+                    <div class="row mt-4">
+                        <div class="col-md-12">
+                            <h6>预测概率</h6>
+                            <pre>${JSON.stringify(results.probabilities.slice(0, 5), null, 2)}${results.probabilities.length > 5 ? '...' : ''}</pre>
+                        </div>
+                    </div>
+                `;
+            }
+
+            predictSummary.innerHTML = summaryHtml;
+            predictResults.style.display = 'block';
+        }
     </script>
 </body>
 </html>

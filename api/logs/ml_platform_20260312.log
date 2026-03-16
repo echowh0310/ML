@@ -146,3 +146,524 @@ numeric__PTRATIO 0.0130
 }
 }
 2026-03-12 10:10:27 - ml_platform_api - INFO - 模型已保存至：./uploads\split_datasets\f1d0caba-fe0e-4e8e-a15c-2cb925182767_split_20260312_101014\random_forest_model_20260312_101027.pkl
+2026-03-12 16:37:49 - ml_platform_api - INFO - 数据集上传成功：ID=a9d6d1de-2bbc-4a91-9fc5-ae312a0be6e5，文件名=iris.csv（存储为0645b750-e4a0-4b49-ba5b-21067ab3fba7.csv）
+2026-03-12 16:39:51 - ml_platform_api - INFO - 获取数据集a9d6d1de-2bbc-4a91-9fc5-ae312a0be6e5列名成功，列数：5
+2026-03-12 16:40:10 - ml_platform_api - WARNING - 列species无异常值范围信息，跳过处理
+2026-03-12 16:40:10 - ml_platform_api - INFO - 处理后数据已保存：./uploads\processed\a9d6d1de-2bbc-4a91-9fc5-ae312a0be6e5_processed_20260312_164010.csv
+2026-03-12 16:40:10 - ml_platform_api - INFO - 数据集a9d6d1de-2bbc-4a91-9fc5-ae312a0be6e5统一处理完成：处理列=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']，空值方法=mean_cols，异常值方法=save_outlier
+2026-03-12 16:41:34 - ml_platform_api - INFO - 通过processed_ID a9d6d1de-2bbc-4a91-9fc5-ae312a0be6e5_processed_20260312_164010 匹配到文件：./uploads\processed\a9d6d1de-2bbc-4a91-9fc5-ae312a0be6e5_processed_20260312_164010.csv
+2026-03-12 16:41:34 - ml_platform_api - INFO - 独热编码列为空，已跳过
+2026-03-12 16:41:34 - ml_platform_api - INFO - 序列编码列为空，已跳过
+2026-03-12 16:41:34 - ml_platform_api - INFO - 数值特征列：['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
+2026-03-12 16:41:34 - ml_platform_api - INFO - 未编码文本特征列：[]
+2026-03-12 16:41:34 - ml_platform_api - INFO - 独热编码列：[]
+2026-03-12 16:41:34 - ml_platform_api - INFO - 序列编码列：[]
+2026-03-12 16:41:34 - ml_platform_api - INFO - 数值列标准化开关：is_standard = False
+2026-03-12 16:41:34 - ml_platform_api - INFO - 特征列编码映射关系：{'sepal_length': '数值列（无编码，透传）', 'sepal_width': '数值列（无编码，透传）', 'petal_length': '数值列（无编码，透传）', 'petal_width': '数值列（无编码，透传）'}
+2026-03-12 16:41:34 - ml_platform_api - INFO - 编码后的特征列：['numeric_passthrough__sepal_length', 'numeric_passthrough__sepal_width', 'numeric_passthrough__petal_length', 'numeric_passthrough__petal_width']
+2026-03-12 16:41:34 - ml_platform_api - INFO - 编码后的特征矩阵形状：(150, 4)
+2026-03-12 16:41:34 - ml_platform_api - INFO - 标签列名：species
+2026-03-12 16:41:34 - ml_platform_api - INFO - 标签列原始类型：object
+2026-03-12 16:41:34 - ml_platform_api - INFO - 标签列前5个值：['setosa', 'setosa', 'setosa', 'setosa', 'setosa']
+2026-03-12 16:41:34 - ml_platform_api - INFO - 标签映射关系：{'setosa': 0, 'versicolor': 1, 'virginica': 2}
+2026-03-12 16:41:34 - ml_platform_api - INFO - 标签编码完成，共 3 个类别
+2026-03-12 16:41:34 - ml_platform_api - INFO - 数据集类别数：3，类别列表：['setosa', 'versicolor', 'virginica']
+2026-03-12 16:41:34 - ml_platform_api - INFO - 编码后训练集特征维度：(74, 4)
+2026-03-12 16:41:34 - ml_platform_api - INFO - 编码后验证集特征维度：(60, 4)
+2026-03-12 16:41:34 - ml_platform_api - INFO - 编码后测试集特征维度：(15, 4)
+2026-03-12 16:41:34 - ml_platform_api - INFO - 数据集处理完成 | 原始ID：a9d6d1de-2bbc-4a91-9fc5-ae312a0be6e5 | 标签列：species | 总样本：150 | 训练集：74(49.7%) | 验证集：60(40.3%) | 测试集：15(10.1%) | 预处理数据保存路径：./uploads\split_datasets\a9d6d1de-2bbc-4a91-9fc5-ae312a0be6e5_split_20260312_164134
+2026-03-12 16:42:28 - ml_platform_api - INFO - 开始加载预处理数据：./uploads\split_datasets\a9d6d1de-2bbc-4a91-9fc5-ae312a0be6e5_split_20260312_164134\processed_data.npz
+2026-03-12 16:42:28 - ml_platform_api - INFO - 数据加载成功 | 训练集：(74, 4) | 验证集：(60, 4) | 测试集：(15, 4)
+2026-03-12 16:42:28 - ml_platform_api - INFO - 使用模型参数：{'n_estimators': 100, 'max_depth': 3, 'min_samples_split': 2, 'random_state': 42}
+2026-03-12 16:42:28 - ml_platform_api - INFO - 开始训练random_forest模型 | 数据集ID：a9d6d1de-2bbc-4a91-9fc5-ae312a0be6e5 | 划分ID：a9d6d1de-2bbc-4a91-9fc5-ae312a0be6e5_split_20260312_164134
+2026-03-12 16:42:28 - ml_platform_api - INFO - 编码后特征列：['numeric_passthrough__sepal_length', 'numeric_passthrough__sepal_width', 'numeric_passthrough__petal_length', 'numeric_passthrough__petal_width']
+2026-03-12 16:42:28 - ml_platform_api - INFO - random_forest模型在测试集上的得分：0.9333333333333333
+2026-03-12 16:42:34 - ml_platform_api - INFO - 特征重要性排序：
+                               特征    重要性
+numeric_passthrough__petal_length 0.4557
+ numeric_passthrough__petal_width 0.4291
+numeric_passthrough__sepal_length 0.0984
+ numeric_passthrough__sepal_width 0.0168
+2026-03-12 16:42:34 - ml_platform_api - INFO - 模型评估指标：
+{
+      "train": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "confusion": [
+      [   25,    0,    0 ],
+      [    0,   25,    0 ],
+      [    0,    0,   24 ]
+    ]
+},
+      "val": {
+      "accuracy": 0.95,
+      "precision": 0.9507,
+      "recall": 0.95,
+      "f1": 0.95,
+      "confusion": [
+      [   20,    0,    0 ],
+      [    0,   18,    2 ],
+      [    0,    1,   19 ]
+    ]
+},
+      "test": {
+      "accuracy": 0.9333,
+      "precision": 0.9444,
+      "recall": 0.9333,
+      "f1": 0.9327,
+      "confusion": [
+      [    5,    0,    0 ],
+      [    0,    4,    1 ],
+      [    0,    0,    5 ]
+    ]
+}
+}
+2026-03-12 16:42:34 - ml_platform_api - INFO - 模型已保存至：./uploads\split_datasets\a9d6d1de-2bbc-4a91-9fc5-ae312a0be6e5_split_20260312_164134\random_forest_model_20260312_164234.pkl
+2026-03-12 16:50:38 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/a9d6d1de-2bbc-4a91-9fc5-ae312a0be6e5_split_20260312_164134/random_forest_model_20260312_164234.pkl
+2026-03-12 16:50:38 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/a9d6d1de-2bbc-4a91-9fc5-ae312a0be6e5_split_20260312_164134/preprocessor.pkl
+2026-03-12 16:50:38 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 16:50:38 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 16:50:38 - ml_platform_api - ERROR - 预测失败：unhashable type: 'dict'
+Traceback (most recent call last):
+  File "D:\wh\AAAproject\MachineLearning\api\MLapi.py", line 1711, in predict_model
+    reverse_label_mapping = {v: k for k, v in label_mapping.items()}
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\wh\AAAproject\MachineLearning\api\MLapi.py", line 1711, in <dictcomp>
+    reverse_label_mapping = {v: k for k, v in label_mapping.items()}
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'dict'
+2026-03-12 17:09:06 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/a9d6d1de-2bbc-4a91-9fc5-ae312a0be6e5_split_20260312_164134/random_forest_model_20260312_164234.pkl
+2026-03-12 17:09:06 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/a9d6d1de-2bbc-4a91-9fc5-ae312a0be6e5_split_20260312_164134/preprocessor.pkl
+2026-03-12 17:09:06 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 17:09:06 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 17:09:06 - ml_platform_api - ERROR - 预测失败：unhashable type: 'dict'
+Traceback (most recent call last):
+  File "D:\wh\AAAproject\MachineLearning\api\MLapi.py", line 1711, in predict_model
+    reverse_label_mapping = {v: k for k, v in label_mapping.items()}
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\wh\AAAproject\MachineLearning\api\MLapi.py", line 1711, in <dictcomp>
+    reverse_label_mapping = {v: k for k, v in label_mapping.items()}
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'dict'
+2026-03-12 17:09:09 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/a9d6d1de-2bbc-4a91-9fc5-ae312a0be6e5_split_20260312_164134/random_forest_model_20260312_164234.pkl
+2026-03-12 17:09:09 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/a9d6d1de-2bbc-4a91-9fc5-ae312a0be6e5_split_20260312_164134/preprocessor.pkl
+2026-03-12 17:09:09 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 17:09:09 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 17:09:09 - ml_platform_api - ERROR - 预测失败：unhashable type: 'dict'
+Traceback (most recent call last):
+  File "D:\wh\AAAproject\MachineLearning\api\MLapi.py", line 1711, in predict_model
+    reverse_label_mapping = {v: k for k, v in label_mapping.items()}
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\wh\AAAproject\MachineLearning\api\MLapi.py", line 1711, in <dictcomp>
+    reverse_label_mapping = {v: k for k, v in label_mapping.items()}
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'dict'
+2026-03-12 17:09:20 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/a9d6d1de-2bbc-4a91-9fc5-ae312a0be6e5_split_20260312_164134/random_forest_model_20260312_164234.pkl
+2026-03-12 17:09:20 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/a9d6d1de-2bbc-4a91-9fc5-ae312a0be6e5_split_20260312_164134/preprocessor.pkl
+2026-03-12 17:09:20 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 17:09:20 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 17:09:20 - ml_platform_api - ERROR - 预测失败：unhashable type: 'dict'
+Traceback (most recent call last):
+  File "D:\wh\AAAproject\MachineLearning\api\MLapi.py", line 1711, in predict_model
+    reverse_label_mapping = {v: k for k, v in label_mapping.items()}
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\wh\AAAproject\MachineLearning\api\MLapi.py", line 1711, in <dictcomp>
+    reverse_label_mapping = {v: k for k, v in label_mapping.items()}
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'dict'
+2026-03-12 17:15:17 - ml_platform_api - INFO - 数据集上传成功：ID=abcace2e-6556-4dd8-8e23-43683f54f691，文件名=boston_house_prices.csv（存储为a7fc4029-d19c-49f2-ba04-99cff48427cd.csv）
+2026-03-12 17:17:13 - ml_platform_api - INFO - 数据集上传成功：ID=abe2c3fe-7a18-44eb-8189-5c4e6c381117，文件名=iris.csv（存储为b73f922f-4499-48ab-89c1-2e68fff042c3.csv）
+2026-03-12 17:17:27 - ml_platform_api - WARNING - 列species无异常值范围信息，跳过处理
+2026-03-12 17:17:27 - ml_platform_api - INFO - 处理后数据已保存：./uploads\processed\abe2c3fe-7a18-44eb-8189-5c4e6c381117_processed_20260312_171727.csv
+2026-03-12 17:17:27 - ml_platform_api - INFO - 数据集abe2c3fe-7a18-44eb-8189-5c4e6c381117统一处理完成：处理列=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']，空值方法=mean_cols，异常值方法=save_outlier
+2026-03-12 17:17:50 - ml_platform_api - INFO - 通过processed_ID abe2c3fe-7a18-44eb-8189-5c4e6c381117_processed_20260312_171727 匹配到文件：./uploads\processed\abe2c3fe-7a18-44eb-8189-5c4e6c381117_processed_20260312_171727.csv
+2026-03-12 17:17:50 - ml_platform_api - INFO - 独热编码列为空，已跳过
+2026-03-12 17:17:50 - ml_platform_api - INFO - 序列编码列为空，已跳过
+2026-03-12 17:17:50 - ml_platform_api - INFO - 数值特征列：['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
+2026-03-12 17:17:50 - ml_platform_api - INFO - 未编码文本特征列：[]
+2026-03-12 17:17:50 - ml_platform_api - INFO - 独热编码列：[]
+2026-03-12 17:17:50 - ml_platform_api - INFO - 序列编码列：[]
+2026-03-12 17:17:50 - ml_platform_api - INFO - 数值列标准化开关：is_standard = False
+2026-03-12 17:17:50 - ml_platform_api - INFO - 特征列编码映射关系：{'sepal_length': '数值列（无编码，透传）', 'sepal_width': '数值列（无编码，透传）', 'petal_length': '数值列（无编码，透传）', 'petal_width': '数值列（无编码，透传）'}
+2026-03-12 17:17:50 - ml_platform_api - INFO - 编码后的特征列：['numeric_passthrough__sepal_length', 'numeric_passthrough__sepal_width', 'numeric_passthrough__petal_length', 'numeric_passthrough__petal_width']
+2026-03-12 17:17:50 - ml_platform_api - INFO - 编码后的特征矩阵形状：(150, 4)
+2026-03-12 17:17:50 - ml_platform_api - INFO - 标签列名：species
+2026-03-12 17:17:50 - ml_platform_api - INFO - 标签列原始类型：object
+2026-03-12 17:17:50 - ml_platform_api - INFO - 标签列前5个值：['setosa', 'setosa', 'setosa', 'setosa', 'setosa']
+2026-03-12 17:17:50 - ml_platform_api - INFO - 标签映射关系：{'setosa': 0, 'versicolor': 1, 'virginica': 2}
+2026-03-12 17:17:50 - ml_platform_api - INFO - 标签编码完成，共 3 个类别
+2026-03-12 17:17:50 - ml_platform_api - INFO - 数据集类别数：3，类别列表：['setosa', 'versicolor', 'virginica']
+2026-03-12 17:17:50 - ml_platform_api - INFO - 编码后训练集特征维度：(74, 4)
+2026-03-12 17:17:50 - ml_platform_api - INFO - 编码后验证集特征维度：(60, 4)
+2026-03-12 17:17:50 - ml_platform_api - INFO - 编码后测试集特征维度：(15, 4)
+2026-03-12 17:17:50 - ml_platform_api - INFO - 数据集处理完成 | 原始ID：abe2c3fe-7a18-44eb-8189-5c4e6c381117 | 标签列：species | 总样本：150 | 训练集：74(49.7%) | 验证集：60(40.3%) | 测试集：15(10.1%) | 预处理数据保存路径：./uploads\split_datasets\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750
+2026-03-12 17:19:44 - ml_platform_api - INFO - 开始加载预处理数据：./uploads\split_datasets\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750\processed_data.npz
+2026-03-12 17:19:44 - ml_platform_api - INFO - 数据加载成功 | 训练集：(74, 4) | 验证集：(60, 4) | 测试集：(15, 4)
+2026-03-12 17:19:44 - ml_platform_api - INFO - 使用模型参数：{'n_estimators': 100, 'max_depth': 3, 'min_samples_split': 2, 'random_state': 42}
+2026-03-12 17:19:44 - ml_platform_api - INFO - 开始训练random_forest模型 | 数据集ID：abe2c3fe-7a18-44eb-8189-5c4e6c381117 | 划分ID：abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750
+2026-03-12 17:19:45 - ml_platform_api - INFO - 编码后特征列：['numeric_passthrough__sepal_length', 'numeric_passthrough__sepal_width', 'numeric_passthrough__petal_length', 'numeric_passthrough__petal_width']
+2026-03-12 17:19:45 - ml_platform_api - INFO - random_forest模型在测试集上的得分：0.9333333333333333
+2026-03-12 17:19:45 - ml_platform_api - INFO - 特征重要性排序：
+                               特征    重要性
+numeric_passthrough__petal_length 0.4557
+ numeric_passthrough__petal_width 0.4291
+numeric_passthrough__sepal_length 0.0984
+ numeric_passthrough__sepal_width 0.0168
+2026-03-12 17:19:45 - ml_platform_api - INFO - 模型评估指标：
+{
+      "train": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "confusion": [
+      [   25,    0,    0 ],
+      [    0,   25,    0 ],
+      [    0,    0,   24 ]
+    ]
+},
+      "val": {
+      "accuracy": 0.95,
+      "precision": 0.9507,
+      "recall": 0.95,
+      "f1": 0.95,
+      "confusion": [
+      [   20,    0,    0 ],
+      [    0,   18,    2 ],
+      [    0,    1,   19 ]
+    ]
+},
+      "test": {
+      "accuracy": 0.9333,
+      "precision": 0.9444,
+      "recall": 0.9333,
+      "f1": 0.9327,
+      "confusion": [
+      [    5,    0,    0 ],
+      [    0,    4,    1 ],
+      [    0,    0,    5 ]
+    ]
+}
+}
+2026-03-12 17:19:45 - ml_platform_api - INFO - 模型已保存至：./uploads\split_datasets\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750\random_forest_model_20260312_171945.pkl
+2026-03-12 17:23:00 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 17:23:00 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 17:23:00 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 17:23:00 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 17:23:00 - ml_platform_api - WARNING - 标签映射是嵌套字典，无法直接创建反向映射: {'split_id': 'abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750', 'dataset_id': 'abe2c3fe-7a18-44eb-8189-5c4e6c381117', 'label_column': 'species', 'label_mapping': {'setosa': 0, 'versicolor': 1, 'virginica': 2}, 'feature_encoding_mapping': {'sepal_length': '数值列（无编码，透传）', 'sepal_width': '数值列（无编码，透传）', 'petal_length': '数值列（无编码，透传）', 'petal_width': '数值列（无编码，透传）'}, 'feature_encoding': ['numeric_passthrough__sepal_length', 'numeric_passthrough__sepal_width', 'numeric_passthrough__petal_length', 'numeric_passthrough__petal_width'], 'all_feature_cols': ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], 'numeric_cols': ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], 'onehot_cols': [], 'ordinal_cols': [], 'split_time': '2026-03-12 17:17:50', 'data_shape': {'train': [74, 4], 'val': [60, 4], 'test': [15, 4]}, 'preprocessor_path': './uploads\\split_datasets\\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750\\preprocessor.pkl', 'label_encoder_path': './uploads\\split_datasets\\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750\\label_encoder.pkl'}
+2026-03-12 17:23:00 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0076 秒
+2026-03-12 17:24:13 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 17:24:13 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 17:24:13 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 17:24:13 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 17:24:13 - ml_platform_api - WARNING - 标签映射是嵌套字典，无法直接创建反向映射: {'split_id': 'abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750', 'dataset_id': 'abe2c3fe-7a18-44eb-8189-5c4e6c381117', 'label_column': 'species', 'label_mapping': {'setosa': 0, 'versicolor': 1, 'virginica': 2}, 'feature_encoding_mapping': {'sepal_length': '数值列（无编码，透传）', 'sepal_width': '数值列（无编码，透传）', 'petal_length': '数值列（无编码，透传）', 'petal_width': '数值列（无编码，透传）'}, 'feature_encoding': ['numeric_passthrough__sepal_length', 'numeric_passthrough__sepal_width', 'numeric_passthrough__petal_length', 'numeric_passthrough__petal_width'], 'all_feature_cols': ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], 'numeric_cols': ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], 'onehot_cols': [], 'ordinal_cols': [], 'split_time': '2026-03-12 17:17:50', 'data_shape': {'train': [74, 4], 'val': [60, 4], 'test': [15, 4]}, 'preprocessor_path': './uploads\\split_datasets\\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750\\preprocessor.pkl', 'label_encoder_path': './uploads\\split_datasets\\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750\\label_encoder.pkl'}
+2026-03-12 17:24:13 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0113 秒
+2026-03-12 17:24:41 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 17:24:41 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 17:24:41 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 17:24:41 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 17:24:41 - ml_platform_api - WARNING - 标签映射是嵌套字典，无法直接创建反向映射: {'split_id': 'abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750', 'dataset_id': 'abe2c3fe-7a18-44eb-8189-5c4e6c381117', 'label_column': 'species', 'label_mapping': {'setosa': 0, 'versicolor': 1, 'virginica': 2}, 'feature_encoding_mapping': {'sepal_length': '数值列（无编码，透传）', 'sepal_width': '数值列（无编码，透传）', 'petal_length': '数值列（无编码，透传）', 'petal_width': '数值列（无编码，透传）'}, 'feature_encoding': ['numeric_passthrough__sepal_length', 'numeric_passthrough__sepal_width', 'numeric_passthrough__petal_length', 'numeric_passthrough__petal_width'], 'all_feature_cols': ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], 'numeric_cols': ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], 'onehot_cols': [], 'ordinal_cols': [], 'split_time': '2026-03-12 17:17:50', 'data_shape': {'train': [74, 4], 'val': [60, 4], 'test': [15, 4]}, 'preprocessor_path': './uploads\\split_datasets\\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750\\preprocessor.pkl', 'label_encoder_path': './uploads\\split_datasets\\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750\\label_encoder.pkl'}
+2026-03-12 17:24:41 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0171 秒
+2026-03-12 17:27:50 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 17:27:50 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 17:27:50 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 17:27:50 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 17:27:50 - ml_platform_api - WARNING - 标签映射是嵌套字典，无法直接创建反向映射: {'split_id': 'abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750', 'dataset_id': 'abe2c3fe-7a18-44eb-8189-5c4e6c381117', 'label_column': 'species', 'label_mapping': {'setosa': 0, 'versicolor': 1, 'virginica': 2}, 'feature_encoding_mapping': {'sepal_length': '数值列（无编码，透传）', 'sepal_width': '数值列（无编码，透传）', 'petal_length': '数值列（无编码，透传）', 'petal_width': '数值列（无编码，透传）'}, 'feature_encoding': ['numeric_passthrough__sepal_length', 'numeric_passthrough__sepal_width', 'numeric_passthrough__petal_length', 'numeric_passthrough__petal_width'], 'all_feature_cols': ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], 'numeric_cols': ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], 'onehot_cols': [], 'ordinal_cols': [], 'split_time': '2026-03-12 17:17:50', 'data_shape': {'train': [74, 4], 'val': [60, 4], 'test': [15, 4]}, 'preprocessor_path': './uploads\\split_datasets\\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750\\preprocessor.pkl', 'label_encoder_path': './uploads\\split_datasets\\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750\\label_encoder.pkl'}
+2026-03-12 17:27:50 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0059 秒
+2026-03-12 17:40:31 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 17:40:31 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 17:40:31 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 17:40:31 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 17:40:31 - ml_platform_api - WARNING - 标签映射是嵌套字典，无法直接创建反向映射: {'split_id': 'abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750', 'dataset_id': 'abe2c3fe-7a18-44eb-8189-5c4e6c381117', 'label_column': 'species', 'label_mapping': {'setosa': 0, 'versicolor': 1, 'virginica': 2}, 'feature_encoding_mapping': {'sepal_length': '数值列（无编码，透传）', 'sepal_width': '数值列（无编码，透传）', 'petal_length': '数值列（无编码，透传）', 'petal_width': '数值列（无编码，透传）'}, 'feature_encoding': ['numeric_passthrough__sepal_length', 'numeric_passthrough__sepal_width', 'numeric_passthrough__petal_length', 'numeric_passthrough__petal_width'], 'all_feature_cols': ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], 'numeric_cols': ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], 'onehot_cols': [], 'ordinal_cols': [], 'split_time': '2026-03-12 17:17:50', 'data_shape': {'train': [74, 4], 'val': [60, 4], 'test': [15, 4]}, 'preprocessor_path': './uploads\\split_datasets\\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750\\preprocessor.pkl', 'label_encoder_path': './uploads\\split_datasets\\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750\\label_encoder.pkl'}
+2026-03-12 17:40:31 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0063 秒
+2026-03-12 17:41:05 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 17:41:05 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 17:41:05 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 17:41:05 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 17:41:05 - ml_platform_api - WARNING - 标签映射是嵌套字典，无法直接创建反向映射: {'split_id': 'abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750', 'dataset_id': 'abe2c3fe-7a18-44eb-8189-5c4e6c381117', 'label_column': 'species', 'label_mapping': {'setosa': 0, 'versicolor': 1, 'virginica': 2}, 'feature_encoding_mapping': {'sepal_length': '数值列（无编码，透传）', 'sepal_width': '数值列（无编码，透传）', 'petal_length': '数值列（无编码，透传）', 'petal_width': '数值列（无编码，透传）'}, 'feature_encoding': ['numeric_passthrough__sepal_length', 'numeric_passthrough__sepal_width', 'numeric_passthrough__petal_length', 'numeric_passthrough__petal_width'], 'all_feature_cols': ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], 'numeric_cols': ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], 'onehot_cols': [], 'ordinal_cols': [], 'split_time': '2026-03-12 17:17:50', 'data_shape': {'train': [74, 4], 'val': [60, 4], 'test': [15, 4]}, 'preprocessor_path': './uploads\\split_datasets\\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750\\preprocessor.pkl', 'label_encoder_path': './uploads\\split_datasets\\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750\\label_encoder.pkl'}
+2026-03-12 17:41:05 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0067 秒
+2026-03-12 17:41:31 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 17:41:32 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 17:41:32 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 17:41:32 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 17:41:32 - ml_platform_api - WARNING - 标签映射是嵌套字典，无法直接创建反向映射: {'split_id': 'abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750', 'dataset_id': 'abe2c3fe-7a18-44eb-8189-5c4e6c381117', 'label_column': 'species', 'label_mapping': {'setosa': 0, 'versicolor': 1, 'virginica': 2}, 'feature_encoding_mapping': {'sepal_length': '数值列（无编码，透传）', 'sepal_width': '数值列（无编码，透传）', 'petal_length': '数值列（无编码，透传）', 'petal_width': '数值列（无编码，透传）'}, 'feature_encoding': ['numeric_passthrough__sepal_length', 'numeric_passthrough__sepal_width', 'numeric_passthrough__petal_length', 'numeric_passthrough__petal_width'], 'all_feature_cols': ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], 'numeric_cols': ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], 'onehot_cols': [], 'ordinal_cols': [], 'split_time': '2026-03-12 17:17:50', 'data_shape': {'train': [74, 4], 'val': [60, 4], 'test': [15, 4]}, 'preprocessor_path': './uploads\\split_datasets\\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750\\preprocessor.pkl', 'label_encoder_path': './uploads\\split_datasets\\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750\\label_encoder.pkl'}
+2026-03-12 17:41:32 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0047 秒
+2026-03-12 17:41:52 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 17:41:52 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 17:41:52 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 17:41:52 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 17:41:52 - ml_platform_api - WARNING - 标签映射是嵌套字典，无法直接创建反向映射: {'split_id': 'abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750', 'dataset_id': 'abe2c3fe-7a18-44eb-8189-5c4e6c381117', 'label_column': 'species', 'label_mapping': {'setosa': 0, 'versicolor': 1, 'virginica': 2}, 'feature_encoding_mapping': {'sepal_length': '数值列（无编码，透传）', 'sepal_width': '数值列（无编码，透传）', 'petal_length': '数值列（无编码，透传）', 'petal_width': '数值列（无编码，透传）'}, 'feature_encoding': ['numeric_passthrough__sepal_length', 'numeric_passthrough__sepal_width', 'numeric_passthrough__petal_length', 'numeric_passthrough__petal_width'], 'all_feature_cols': ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], 'numeric_cols': ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], 'onehot_cols': [], 'ordinal_cols': [], 'split_time': '2026-03-12 17:17:50', 'data_shape': {'train': [74, 4], 'val': [60, 4], 'test': [15, 4]}, 'preprocessor_path': './uploads\\split_datasets\\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750\\preprocessor.pkl', 'label_encoder_path': './uploads\\split_datasets\\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750\\label_encoder.pkl'}
+2026-03-12 17:41:52 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0108 秒
+2026-03-12 17:47:00 - ml_platform_api - INFO - 数据集上传成功：ID=e8d94ccd-aa91-4b57-99a1-d2a6445a9400，文件名=iris.csv（存储为fcc89e15-fee9-459b-9f6d-f428ddbb9dd7.csv）
+2026-03-12 17:47:21 - ml_platform_api - WARNING - 列species无异常值范围信息，跳过处理
+2026-03-12 17:47:21 - ml_platform_api - INFO - 处理后数据已保存：./uploads\processed\e8d94ccd-aa91-4b57-99a1-d2a6445a9400_processed_20260312_174721.csv
+2026-03-12 17:47:21 - ml_platform_api - INFO - 数据集e8d94ccd-aa91-4b57-99a1-d2a6445a9400统一处理完成：处理列=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']，空值方法=mean_cols，异常值方法=save_outlier
+2026-03-12 17:48:07 - ml_platform_api - INFO - 通过processed_ID e8d94ccd-aa91-4b57-99a1-d2a6445a9400_processed_20260312_174721 匹配到文件：./uploads\processed\e8d94ccd-aa91-4b57-99a1-d2a6445a9400_processed_20260312_174721.csv
+2026-03-12 17:48:07 - ml_platform_api - INFO - 独热编码列为空，已跳过
+2026-03-12 17:48:07 - ml_platform_api - INFO - 序列编码列为空，已跳过
+2026-03-12 17:48:07 - ml_platform_api - INFO - 数值特征列：['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
+2026-03-12 17:48:07 - ml_platform_api - INFO - 未编码文本特征列：[]
+2026-03-12 17:48:07 - ml_platform_api - INFO - 独热编码列：[]
+2026-03-12 17:48:07 - ml_platform_api - INFO - 序列编码列：[]
+2026-03-12 17:48:07 - ml_platform_api - INFO - 数值列标准化开关：is_standard = False
+2026-03-12 17:48:07 - ml_platform_api - INFO - 特征列编码映射关系：{'sepal_length': '数值列（无编码，透传）', 'sepal_width': '数值列（无编码，透传）', 'petal_length': '数值列（无编码，透传）', 'petal_width': '数值列（无编码，透传）'}
+2026-03-12 17:48:07 - ml_platform_api - INFO - 编码后的特征列：['numeric_passthrough__sepal_length', 'numeric_passthrough__sepal_width', 'numeric_passthrough__petal_length', 'numeric_passthrough__petal_width']
+2026-03-12 17:48:07 - ml_platform_api - INFO - 编码后的特征矩阵形状：(150, 4)
+2026-03-12 17:48:07 - ml_platform_api - INFO - 标签列名：species
+2026-03-12 17:48:07 - ml_platform_api - INFO - 标签列原始类型：object
+2026-03-12 17:48:07 - ml_platform_api - INFO - 标签列前5个值：['setosa', 'setosa', 'setosa', 'setosa', 'setosa']
+2026-03-12 17:48:07 - ml_platform_api - INFO - 标签映射关系：{'setosa': 0, 'versicolor': 1, 'virginica': 2}
+2026-03-12 17:48:07 - ml_platform_api - INFO - 标签编码完成，共 3 个类别
+2026-03-12 17:48:07 - ml_platform_api - INFO - 数据集类别数：3，类别列表：['setosa', 'versicolor', 'virginica']
+2026-03-12 17:48:07 - ml_platform_api - INFO - 编码后训练集特征维度：(74, 4)
+2026-03-12 17:48:07 - ml_platform_api - INFO - 编码后验证集特征维度：(60, 4)
+2026-03-12 17:48:07 - ml_platform_api - INFO - 编码后测试集特征维度：(15, 4)
+2026-03-12 17:48:07 - ml_platform_api - INFO - 数据集处理完成 | 原始ID：e8d94ccd-aa91-4b57-99a1-d2a6445a9400 | 标签列：species | 总样本：150 | 训练集：74(49.7%) | 验证集：60(40.3%) | 测试集：15(10.1%) | 预处理数据保存路径：./uploads\split_datasets\e8d94ccd-aa91-4b57-99a1-d2a6445a9400_split_20260312_174807
+2026-03-12 17:49:00 - ml_platform_api - INFO - 开始加载预处理数据：./uploads\split_datasets\e8d94ccd-aa91-4b57-99a1-d2a6445a9400_split_20260312_174807\processed_data.npz
+2026-03-12 17:49:00 - ml_platform_api - INFO - 数据加载成功 | 训练集：(74, 4) | 验证集：(60, 4) | 测试集：(15, 4)
+2026-03-12 17:49:00 - ml_platform_api - INFO - 使用模型参数：{'n_estimators': 100, 'max_depth': 3, 'min_samples_split': 2, 'random_state': 42}
+2026-03-12 17:49:00 - ml_platform_api - INFO - 开始训练random_forest模型 | 数据集ID：e8d94ccd-aa91-4b57-99a1-d2a6445a9400 | 划分ID：e8d94ccd-aa91-4b57-99a1-d2a6445a9400_split_20260312_174807
+2026-03-12 17:49:00 - ml_platform_api - INFO - 编码后特征列：['numeric_passthrough__sepal_length', 'numeric_passthrough__sepal_width', 'numeric_passthrough__petal_length', 'numeric_passthrough__petal_width']
+2026-03-12 17:49:00 - ml_platform_api - INFO - random_forest模型在测试集上的得分：0.9333333333333333
+2026-03-12 17:49:01 - ml_platform_api - INFO - 特征重要性排序：
+                               特征    重要性
+numeric_passthrough__petal_length 0.4557
+ numeric_passthrough__petal_width 0.4291
+numeric_passthrough__sepal_length 0.0984
+ numeric_passthrough__sepal_width 0.0168
+2026-03-12 17:49:01 - ml_platform_api - INFO - 模型评估指标：
+{
+      "train": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "confusion": [
+      [   25,    0,    0 ],
+      [    0,   25,    0 ],
+      [    0,    0,   24 ]
+    ]
+},
+      "val": {
+      "accuracy": 0.95,
+      "precision": 0.9507,
+      "recall": 0.95,
+      "f1": 0.95,
+      "confusion": [
+      [   20,    0,    0 ],
+      [    0,   18,    2 ],
+      [    0,    1,   19 ]
+    ]
+},
+      "test": {
+      "accuracy": 0.9333,
+      "precision": 0.9444,
+      "recall": 0.9333,
+      "f1": 0.9327,
+      "confusion": [
+      [    5,    0,    0 ],
+      [    0,    4,    1 ],
+      [    0,    0,    5 ]
+    ]
+}
+}
+2026-03-12 17:49:01 - ml_platform_api - INFO - 模型已保存至：./uploads\split_datasets\e8d94ccd-aa91-4b57-99a1-d2a6445a9400_split_20260312_174807\random_forest_model_20260312_174901.pkl
+2026-03-12 17:49:43 - ml_platform_api - ERROR - 预测失败：'PredictRequest' object has no attribute 'label_mapping_path'
+Traceback (most recent call last):
+  File "D:\wh\AAAproject\MachineLearning\api\MLapi.py", line 1649, in predict_model
+    label_mapping_path = predict_request.label_mapping_path
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\wh\anaconda3\envs\pytorchlearn\Lib\site-packages\pydantic\main.py", line 1026, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'PredictRequest' object has no attribute 'label_mapping_path'
+2026-03-12 17:50:00 - ml_platform_api - ERROR - 预测失败：'PredictRequest' object has no attribute 'label_mapping_path'
+Traceback (most recent call last):
+  File "D:\wh\AAAproject\MachineLearning\api\MLapi.py", line 1649, in predict_model
+    label_mapping_path = predict_request.label_mapping_path
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\wh\anaconda3\envs\pytorchlearn\Lib\site-packages\pydantic\main.py", line 1026, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'PredictRequest' object has no attribute 'label_mapping_path'
+2026-03-12 17:50:29 - ml_platform_api - ERROR - 预测失败：'PredictRequest' object has no attribute 'label_mapping_path'
+Traceback (most recent call last):
+  File "D:\wh\AAAproject\MachineLearning\api\MLapi.py", line 1649, in predict_model
+    meta_info_path = predict_request.meta_info_path
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\wh\anaconda3\envs\pytorchlearn\Lib\site-packages\pydantic\main.py", line 1026, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'PredictRequest' object has no attribute 'label_mapping_path'
+2026-03-12 17:50:31 - ml_platform_api - ERROR - 预测失败：'PredictRequest' object has no attribute 'label_mapping_path'
+Traceback (most recent call last):
+  File "D:\wh\AAAproject\MachineLearning\api\MLapi.py", line 1649, in predict_model
+    meta_info_path = predict_request.meta_info_path
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\wh\anaconda3\envs\pytorchlearn\Lib\site-packages\pydantic\main.py", line 1026, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'PredictRequest' object has no attribute 'label_mapping_path'
+2026-03-12 17:54:05 - ml_platform_api - INFO - 数据集上传成功：ID=9b5c4eac-cf43-4b0d-9dea-0e3dd36e8e36，文件名=iris.csv（存储为9e98c60f-2960-4226-919b-42a861eef21a.csv）
+2026-03-12 17:54:37 - ml_platform_api - WARNING - 列species无异常值范围信息，跳过处理
+2026-03-12 17:54:37 - ml_platform_api - INFO - 处理后数据已保存：./uploads\processed\9b5c4eac-cf43-4b0d-9dea-0e3dd36e8e36_processed_20260312_175437.csv
+2026-03-12 17:54:37 - ml_platform_api - INFO - 数据集9b5c4eac-cf43-4b0d-9dea-0e3dd36e8e36统一处理完成：处理列=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']，空值方法=mean_cols，异常值方法=save_outlier
+2026-03-12 17:55:07 - ml_platform_api - INFO - 通过processed_ID 9b5c4eac-cf43-4b0d-9dea-0e3dd36e8e36_processed_20260312_175437 匹配到文件：./uploads\processed\9b5c4eac-cf43-4b0d-9dea-0e3dd36e8e36_processed_20260312_175437.csv
+2026-03-12 17:55:07 - ml_platform_api - INFO - 独热编码列为空，已跳过
+2026-03-12 17:55:07 - ml_platform_api - INFO - 序列编码列为空，已跳过
+2026-03-12 17:55:07 - ml_platform_api - INFO - 数值特征列：['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
+2026-03-12 17:55:07 - ml_platform_api - INFO - 未编码文本特征列：[]
+2026-03-12 17:55:07 - ml_platform_api - INFO - 独热编码列：[]
+2026-03-12 17:55:07 - ml_platform_api - INFO - 序列编码列：[]
+2026-03-12 17:55:07 - ml_platform_api - INFO - 数值列标准化开关：is_standard = False
+2026-03-12 17:55:07 - ml_platform_api - INFO - 特征列编码映射关系：{'sepal_length': '数值列（无编码，透传）', 'sepal_width': '数值列（无编码，透传）', 'petal_length': '数值列（无编码，透传）', 'petal_width': '数值列（无编码，透传）'}
+2026-03-12 17:55:07 - ml_platform_api - INFO - 编码后的特征列：['numeric_passthrough__sepal_length', 'numeric_passthrough__sepal_width', 'numeric_passthrough__petal_length', 'numeric_passthrough__petal_width']
+2026-03-12 17:55:07 - ml_platform_api - INFO - 编码后的特征矩阵形状：(150, 4)
+2026-03-12 17:55:07 - ml_platform_api - INFO - 标签列名：species
+2026-03-12 17:55:07 - ml_platform_api - INFO - 标签列原始类型：object
+2026-03-12 17:55:07 - ml_platform_api - INFO - 标签列前5个值：['setosa', 'setosa', 'setosa', 'setosa', 'setosa']
+2026-03-12 17:55:07 - ml_platform_api - INFO - 标签映射关系：{'setosa': 0, 'versicolor': 1, 'virginica': 2}
+2026-03-12 17:55:07 - ml_platform_api - INFO - 标签编码完成，共 3 个类别
+2026-03-12 17:55:07 - ml_platform_api - INFO - 数据集类别数：3，类别列表：['setosa', 'versicolor', 'virginica']
+2026-03-12 17:55:07 - ml_platform_api - INFO - 编码后训练集特征维度：(74, 4)
+2026-03-12 17:55:07 - ml_platform_api - INFO - 编码后验证集特征维度：(60, 4)
+2026-03-12 17:55:07 - ml_platform_api - INFO - 编码后测试集特征维度：(15, 4)
+2026-03-12 17:55:07 - ml_platform_api - INFO - 数据集处理完成 | 原始ID：9b5c4eac-cf43-4b0d-9dea-0e3dd36e8e36 | 标签列：species | 总样本：150 | 训练集：74(49.7%) | 验证集：60(40.3%) | 测试集：15(10.1%) | 预处理数据保存路径：./uploads\split_datasets\9b5c4eac-cf43-4b0d-9dea-0e3dd36e8e36_split_20260312_175507
+2026-03-12 17:57:41 - ml_platform_api - INFO - 开始加载预处理数据：./uploads\split_datasets\9b5c4eac-cf43-4b0d-9dea-0e3dd36e8e36_split_20260312_175507\processed_data.npz
+2026-03-12 17:57:41 - ml_platform_api - INFO - 数据加载成功 | 训练集：(74, 4) | 验证集：(60, 4) | 测试集：(15, 4)
+2026-03-12 17:57:41 - ml_platform_api - INFO - 使用模型参数：{'n_estimators': 100, 'max_depth': 3, 'min_samples_split': 2, 'random_state': 42}
+2026-03-12 17:57:41 - ml_platform_api - INFO - 开始训练random_forest模型 | 数据集ID：9b5c4eac-cf43-4b0d-9dea-0e3dd36e8e36 | 划分ID：9b5c4eac-cf43-4b0d-9dea-0e3dd36e8e36_split_20260312_175507
+2026-03-12 17:57:41 - ml_platform_api - INFO - 编码后特征列：['numeric_passthrough__sepal_length', 'numeric_passthrough__sepal_width', 'numeric_passthrough__petal_length', 'numeric_passthrough__petal_width']
+2026-03-12 17:57:41 - ml_platform_api - INFO - random_forest模型在测试集上的得分：0.9333333333333333
+2026-03-12 17:57:41 - ml_platform_api - INFO - 特征重要性排序：
+                               特征    重要性
+numeric_passthrough__petal_length 0.4557
+ numeric_passthrough__petal_width 0.4291
+numeric_passthrough__sepal_length 0.0984
+ numeric_passthrough__sepal_width 0.0168
+2026-03-12 17:57:41 - ml_platform_api - INFO - 模型评估指标：
+{
+      "train": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "confusion": [
+      [   25,    0,    0 ],
+      [    0,   25,    0 ],
+      [    0,    0,   24 ]
+    ]
+},
+      "val": {
+      "accuracy": 0.95,
+      "precision": 0.9507,
+      "recall": 0.95,
+      "f1": 0.95,
+      "confusion": [
+      [   20,    0,    0 ],
+      [    0,   18,    2 ],
+      [    0,    1,   19 ]
+    ]
+},
+      "test": {
+      "accuracy": 0.9333,
+      "precision": 0.9444,
+      "recall": 0.9333,
+      "f1": 0.9327,
+      "confusion": [
+      [    5,    0,    0 ],
+      [    0,    4,    1 ],
+      [    0,    0,    5 ]
+    ]
+}
+}
+2026-03-12 17:57:41 - ml_platform_api - INFO - 模型已保存至：./uploads\split_datasets\9b5c4eac-cf43-4b0d-9dea-0e3dd36e8e36_split_20260312_175507\random_forest_model_20260312_175741.pkl
+2026-03-12 17:58:30 - ml_platform_api - ERROR - 预测失败：'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "D:\wh\AAAproject\MachineLearning\api\MLapi.py", line 1650, in predict_model
+    label_mapping = meta_info_path["label_mapping"]
+                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+2026-03-12 18:02:23 - ml_platform_api - ERROR - 预测失败：模型文件不存在：：./uploads/split_datasets/e8d94ccd-aa91-4b57-99a1-d2a6445a9400_split_20260312_174807/random_forest_model_20260312_174901.pkl
+2026-03-12 18:02:31 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/e8d94ccd-aa91-4b57-99a1-d2a6445a9400_split_20260312_174807/random_forest_model_20260312_174901.pkl
+2026-03-12 18:02:31 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/e8d94ccd-aa91-4b57-99a1-d2a6445a9400_split_20260312_174807/preprocessor.pkl
+2026-03-12 18:02:31 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 18:02:31 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 18:02:31 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0125 秒
+2026-03-12 18:04:04 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 18:04:04 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 18:04:04 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 18:04:04 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 18:04:04 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0129 秒
+2026-03-12 18:04:20 - ml_platform_api - ERROR - 预测失败：模型文件不存在： ./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 18:04:22 - ml_platform_api - ERROR - 预测失败：模型文件不存在： ./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 18:04:28 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 18:04:28 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 18:04:28 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 18:04:28 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 18:04:28 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0140 秒
+2026-03-12 18:05:56 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 18:05:56 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 18:05:56 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 18:05:56 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 18:05:56 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0089 秒
+2026-03-12 18:08:00 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 18:08:00 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 18:08:00 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 18:08:00 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 18:08:00 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0089 秒
+2026-03-12 18:08:04 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 18:08:04 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 18:08:04 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 18:08:04 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 18:08:04 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0052 秒
+2026-03-12 18:08:05 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 18:08:05 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 18:08:05 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 18:08:05 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 18:08:05 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0047 秒
+2026-03-12 18:09:54 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 18:09:54 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 18:09:54 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 18:09:54 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 18:09:54 - ml_platform_api - INFO - <UNK>None
+2026-03-12 18:09:54 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0077 秒
+2026-03-12 18:10:51 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 18:10:51 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 18:10:51 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 18:10:51 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 18:10:51 - ml_platform_api - INFO - <UNK>{'split_id': 'abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750', 'dataset_id': 'abe2c3fe-7a18-44eb-8189-5c4e6c381117', 'label_column': 'species', 'label_mapping': {'setosa': 0, 'versicolor': 1, 'virginica': 2}, 'feature_encoding_mapping': {'sepal_length': '数值列（无编码，透传）', 'sepal_width': '数值列（无编码，透传）', 'petal_length': '数值列（无编码，透传）', 'petal_width': '数值列（无编码，透传）'}, 'feature_encoding': ['numeric_passthrough__sepal_length', 'numeric_passthrough__sepal_width', 'numeric_passthrough__petal_length', 'numeric_passthrough__petal_width'], 'all_feature_cols': ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], 'numeric_cols': ['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], 'onehot_cols': [], 'ordinal_cols': [], 'split_time': '2026-03-12 17:17:50', 'data_shape': {'train': [74, 4], 'val': [60, 4], 'test': [15, 4]}, 'preprocessor_path': './uploads\\split_datasets\\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750\\preprocessor.pkl', 'label_encoder_path': './uploads\\split_datasets\\abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750\\label_encoder.pkl'}
+2026-03-12 18:10:51 - ml_platform_api - INFO - <UNK>{'setosa': 0, 'versicolor': 1, 'virginica': 2}
+2026-03-12 18:10:51 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0151 秒
+2026-03-12 18:12:37 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 18:12:37 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 18:12:37 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 18:12:37 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 18:12:37 - ml_platform_api - INFO - 标签映射：{'setosa': 0, 'versicolor': 1, 'virginica': 2}
+2026-03-12 18:12:37 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0092 秒
+2026-03-12 18:15:05 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 18:15:05 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 18:15:05 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 18:15:05 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 18:15:05 - ml_platform_api - INFO - 标签映射：{'setosa': 0, 'versicolor': 1, 'virginica': 2}
+2026-03-12 18:15:05 - ml_platform_api - WARNING - 预测结果: <class 'list'>
+2026-03-12 18:15:05 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0081 秒
+2026-03-12 18:16:35 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 18:16:35 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 18:16:35 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 18:16:35 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 18:16:35 - ml_platform_api - INFO - 标签映射：{'setosa': 0, 'versicolor': 1, 'virginica': 2}
+2026-03-12 18:16:35 - ml_platform_api - WARNING - 预测结果: <class 'list'>
+2026-03-12 18:16:35 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0073 秒
+2026-03-12 18:21:11 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 18:21:11 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 18:21:11 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 18:21:11 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 18:21:11 - ml_platform_api - INFO - 标签映射：{'setosa': 0, 'versicolor': 1, 'virginica': 2}
+2026-03-12 18:21:11 - ml_platform_api - WARNING - 预测结果: ['versicolor']
+2026-03-12 18:21:11 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0059 秒
+2026-03-12 18:21:47 - ml_platform_api - INFO - 开始加载模型：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/random_forest_model_20260312_171945.pkl
+2026-03-12 18:21:47 - ml_platform_api - INFO - 开始加载预处理器：./uploads/split_datasets/abe2c3fe-7a18-44eb-8189-5c4e6c381117_split_20260312_171750/preprocessor.pkl
+2026-03-12 18:21:47 - ml_platform_api - INFO - 开始预处理输入数据
+2026-03-12 18:21:47 - ml_platform_api - INFO - 开始执行预测
+2026-03-12 18:21:47 - ml_platform_api - INFO - 标签映射：{'setosa': 0, 'versicolor': 1, 'virginica': 2}
+2026-03-12 18:21:47 - ml_platform_api - WARNING - 预测结果: ['virginica']
+2026-03-12 18:21:47 - ml_platform_api - INFO - 预测完成，共处理 1 条数据，耗时 0.0052 秒

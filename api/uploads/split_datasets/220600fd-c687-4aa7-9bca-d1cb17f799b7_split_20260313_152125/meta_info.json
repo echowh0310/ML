@@ -1,0 +1,85 @@
+{
+    "split_id": "220600fd-c687-4aa7-9bca-d1cb17f799b7_split_20260313_152125",
+    "dataset_id": "220600fd-c687-4aa7-9bca-d1cb17f799b7",
+    "label_column": "MEDV",
+    "label_mapping": null,
+    "feature_encoding_mapping": {
+        "CRIM": "数值列（无编码，透传）",
+        "ZN": "数值列（无编码，透传）",
+        "INDUS": "数值列（无编码，透传）",
+        "CHAS": "数值列（无编码，透传）",
+        "NOX": "数值列（无编码，透传）",
+        "RM": "数值列（无编码，透传）",
+        "AGE": "数值列（无编码，透传）",
+        "DIS": "数值列（无编码，透传）",
+        "RAD": "数值列（无编码，透传）",
+        "TAX": "数值列（无编码，透传）",
+        "PTRATIO": "数值列（无编码，透传）",
+        "B": "数值列（无编码，透传）",
+        "LSTAT": "数值列（无编码，透传）"
+    },
+    "feature_encoding": [
+        "numeric_passthrough__CRIM",
+        "numeric_passthrough__ZN",
+        "numeric_passthrough__INDUS",
+        "numeric_passthrough__CHAS",
+        "numeric_passthrough__NOX",
+        "numeric_passthrough__RM",
+        "numeric_passthrough__AGE",
+        "numeric_passthrough__DIS",
+        "numeric_passthrough__RAD",
+        "numeric_passthrough__TAX",
+        "numeric_passthrough__PTRATIO",
+        "numeric_passthrough__B",
+        "numeric_passthrough__LSTAT"
+    ],
+    "all_feature_cols": [
+        "CRIM",
+        "ZN",
+        "INDUS",
+        "CHAS",
+        "NOX",
+        "RM",
+        "AGE",
+        "DIS",
+        "RAD",
+        "TAX",
+        "PTRATIO",
+        "B",
+        "LSTAT"
+    ],
+    "numeric_cols": [
+        "CRIM",
+        "ZN",
+        "INDUS",
+        "CHAS",
+        "NOX",
+        "RM",
+        "AGE",
+        "DIS",
+        "RAD",
+        "TAX",
+        "PTRATIO",
+        "B",
+        "LSTAT"
+    ],
+    "onehot_cols": [],
+    "ordinal_cols": [],
+    "split_time": "2026-03-13 15:21:25",
+    "data_shape": {
+        "train": [
+            303,
+            13
+        ],
+        "val": [
+            101,
+            13
+        ],
+        "test": [
+            102,
+            13
+        ]
+    },
+    "preprocessor_path": "./uploads\\split_datasets\\220600fd-c687-4aa7-9bca-d1cb17f799b7_split_20260313_152125\\preprocessor.pkl",
+    "label_encoder_path": null
+}
